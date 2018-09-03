@@ -10,30 +10,49 @@ import Foundation
 
 class DeckController {
     
-    static let baseURL = "https://deckofcardsapi.com/api/deck/"
+    static let shared = DeckController(); private init() {}
     
-    static func fetch(at endpoint: String, completion: @escaping () -> Void) {
+    private let baseURLString = "https://deckofcardsapi.com/api/deck"
+    
+    func fetchCard(count: Int, completion: @escaping ([Card]?) -> Void) {
         
-        guard let url = URL(string: DeckController.baseURL)?.appendingPathComponent(endpoint) else {
-            print("Error at url path")
-            completion(); return
+        guard let baseURL = URL(string: baseURLString) else {
+            fatalError("Bad base url")
         }
         
-        let urlRequest = URLRequest(url: url)
+        // Build a URL workshop
+        let newURL = baseURL.appendingPathComponent("new").appendingPathComponent("draw")
+        var components = URLComponents(url: newURL, resolvingAgainstBaseURL: true)
+        let queryItems = URLQueryItem(name: "count", value: "\(count)")
+        components?.queryItems = [queryItems]
+        guard let url = components?.url else { return  }
         
-        let urlSession = URLSession.shared
-        let dataTask = urlSession.dataTask(with: urlRequest) { (data, response, error) in
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
             
             if let error = error {
-                print("Error at data task: \(error)")
-                completion(); return
+                print("Error at data task \(#function): \(error) \(error.localizedDescription)")
+                completion([])
+                return
             }
+            
+            if let _ = response { completion([]); return }
             
             guard let data = data else {
                 print("Did not recieve any data")
-                completion(); return
+                completion([])
+                return
             }
-        }
-        
+            
+            do {
+                let decoder = JSONDecoder()
+                let cards = try decoder.decode(Deck.self, from: data).cards
+                completion(cards)
+                return
+            } catch let error {
+                print("😳\nThere was an error in \(#function): \(error)\n\n\(error.localizedDescription)\n👿")
+                completion([])
+                return
+            }
+        }.resume()
     }
 }

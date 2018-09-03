@@ -21,7 +21,21 @@ class CardDetailViewController: UIViewController {
     }
 
     @IBAction func drawCardButtonTapped(_ sender: Any) {
-        
+        updateViews()
+    }
+    
+    func updateViews() {
+        DeckController.shared.fetchCard(count: 1) { (cards) in
+            guard let card = cards?.first else { return }
+            guard let imageURL = URL(string: card.image) else { return }
+            guard let imageData = try? Data(contentsOf: imageURL) else { return }
+            
+            DispatchQueue.main.async {
+                self.cardImageView.image = UIImage(data: imageData)
+                self.suitLabel.text = "\(card.suit)"
+                self.valueLabel.text = "\(card.value)"
+            }
+        }
     }
     
 }

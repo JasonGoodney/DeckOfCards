@@ -35,14 +35,14 @@
                                     <action selector="drawCardButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VOy-GC-UTT"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Value)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwX-LR-Rsn">
-                                <rect key="frame" x="16" y="98" width="71" height="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwX-LR-Rsn">
+                                <rect key="frame" x="16" y="97.5" width="343" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Suit)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Vf-Kf-DY6">
-                                <rect key="frame" x="16" y="62" width="55" height="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suit: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Vf-Kf-DY6">
+                                <rect key="frame" x="16" y="62" width="343" height="27.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -52,12 +52,12 @@
                         <constraints>
                             <constraint firstItem="RnK-kc-YUb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="21o-wz-037"/>
                             <constraint firstItem="RnK-kc-YUb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="De1-wJ-2r8"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jwX-LR-Rsn" secondAttribute="trailing" constant="288" id="Hux-H0-qXH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jwX-LR-Rsn" secondAttribute="trailing" constant="16" id="Hux-H0-qXH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="npw-Iz-4Pl" secondAttribute="bottom" constant="38" id="I3h-hr-EyR"/>
                             <constraint firstItem="jwX-LR-Rsn" firstAttribute="top" secondItem="7Vf-Kf-DY6" secondAttribute="bottom" constant="8" id="Jhm-kV-FjB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="npw-Iz-4Pl" secondAttribute="trailing" constant="162" id="WVT-aq-hOj"/>
                             <constraint firstItem="jwX-LR-Rsn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ZqV-4W-eN5"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Vf-Kf-DY6" secondAttribute="trailing" constant="304" id="elv-IZ-Xwe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Vf-Kf-DY6" secondAttribute="trailing" constant="16" id="elv-IZ-Xwe"/>
                             <constraint firstItem="7Vf-Kf-DY6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="jvj-dk-TPl"/>
                             <constraint firstItem="npw-Iz-4Pl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="161" id="sM2-JI-ajQ"/>
                             <constraint firstItem="7Vf-Kf-DY6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="42" id="wu6-Zs-Cfu"/>
