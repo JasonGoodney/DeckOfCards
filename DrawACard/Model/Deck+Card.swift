@@ -8,12 +8,16 @@
 
 import Foundation
 
-struct Deck {
-    let card: Card
+struct Deck: Decodable {
+    // This propert is on the top level of the JSON
+    // MARK: - Properties
+    let cards: [Card]
+    
+    struct Card: Decodable {
+        let suit: String
+        let value: String
+        let image: String
+    }
+
 }
 
-struct Card {
-    let suit: String
-    let value: String
-    let image: String
-}
